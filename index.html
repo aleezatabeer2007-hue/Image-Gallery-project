@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="gallery-container">
+        <h1>Interactive Image Gallery</h1>
+
+        <!-- Filter Buttons (Bonus) -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterGallery('all')">All</button>
+            <button class="filter-btn" onclick="filterGallery('nature')">Nature</button>
+            <button class="filter-btn" onclick="filterGallery('architecture')">Architecture</button>
+            <button class="filter-btn" onclick="filterGallery('animals')">Animals</button>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="gallery-grid">
+            <div class="gallery-item nature" onclick="openLightbox(0)">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Mountain Landscape">
+                <div class="overlay"><span>Mountain Lake</span></div>
+            </div>
+            <div class="gallery-item architecture" onclick="openLightbox(1)">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Skyscraper Architecture">
+                <div class="overlay"><span>Modern Architecture</span></div>
+            </div>
+            <div class="gallery-item animals" onclick="openLightbox(2)">
+                <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=600&q=80" alt="Lion Portrait">
+                <div class="overlay"><span>Majestic Lion</span></div>
+            </div>
+            <div class="gallery-item nature" onclick="openLightbox(3)">
+                <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80" alt="Forest Pathway">
+                <div class="overlay"><span>Forest Path</span></div>
+            </div>
+            <div class="gallery-item architecture" onclick="openLightbox(4)">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Cozy Interior">
+                <div class="overlay"><span>Interior Design</span></div>
+            </div>
+            <div class="gallery-item animals" onclick="openLightbox(5)">
+                <img src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=600&q=80" alt="Cute Kitten">
+                <div class="overlay"><span>Playful Kitten</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal View -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <button class="nav-btn prev-btn" onclick="changeImage(-1)">&#10094;</button>
+        <img id="lightbox-img" src="" alt="Lightbox View">
+        <button class="nav-btn next-btn" onclick="changeImage(1)">&#10095;</button>
+        <div id="lightbox-caption" class="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
